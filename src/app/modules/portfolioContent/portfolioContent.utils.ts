@@ -9,6 +9,7 @@ import { Hero } from './hero.model';
 import { Education } from './education.model';
 import { Experience } from './experience.model';
 import { Header } from './header.model';
+import { Services } from './services.model';
 
 export const modelMapper: Record<string, Model<any>> = {
   footer: Footer,
@@ -21,4 +22,5 @@ export const modelMapper: Record<string, Model<any>> = {
   experience: Experience,
   generic: DynamicContent,
   header: Header,
+  services: Services,
 };

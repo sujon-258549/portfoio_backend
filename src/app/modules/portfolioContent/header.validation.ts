@@ -7,7 +7,7 @@ const headerButtonSchema = z.object({
 });
 
 const navLinkSchema = z.object({
-  label: z.string({ message: 'Label is required' }),
+  text: z.string({ message: 'Text is required' }),
   link: z.string({ message: 'Link is required' }),
 });
 

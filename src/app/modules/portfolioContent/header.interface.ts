@@ -5,7 +5,7 @@ export type THeaderButton = {
 };
 
 export type TNavLink = {
-  label: string;
+  text: string;
   link: string;
 };
 

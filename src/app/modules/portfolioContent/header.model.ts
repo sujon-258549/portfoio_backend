@@ -12,7 +12,7 @@ const headerButtonSchema = new Schema<THeaderButton>(
 
 const navLinkSchema = new Schema<TNavLink>(
   {
-    label: { type: String, required: true },
+    text: { type: String, required: true },
     link: { type: String, required: true },
   },
   { _id: false },
