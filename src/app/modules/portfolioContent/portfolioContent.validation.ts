@@ -1,14 +1,14 @@
 import { NextFunction, Request, Response } from 'express';
-import { FooterValidations } from './footer.validation';
-import { ContactValidations } from './contact.validation';
-import { ProjectSectionHeaderValidations } from './projectSectionHeader.validation';
-import { SkillsValidations } from './skills.validation';
-import { AboutValidations } from './about.validation';
-import { HeroValidations } from './hero.validation';
-import { EducationValidations } from './education.validation';
-import { ExperienceValidations } from './experience.validation';
-import { HeaderValidations } from './header.validation';
-import { ServicesValidations } from './services.validation';
+import { FooterValidations } from './footer/footer.validation';
+import { ContactValidations } from './contact/contact.validation';
+import { ProjectSectionHeaderValidations } from './projectSectionHeader/projectSectionHeader.validation';
+import { SkillsValidations } from './skills/skills.validation';
+import { AboutValidations } from './about/about.validation';
+import { HeroValidations } from './hero/hero.validation';
+import { EducationValidations } from './education/education.validation';
+import { ExperienceValidations } from './experience/experience.validation';
+import { HeaderValidations } from './header/header.validation';
+import { ServicesValidations } from './services/services.validation';
 
 import catchAsync from '../../utils/catchAsync';
 
