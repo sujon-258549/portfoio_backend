@@ -1,9 +1,13 @@
 import { StatusCodes } from 'http-status-codes';
+import { Types } from 'mongoose';
+import { createUniqueSlug } from '../../utils/slugGenerator';
 import AppError from '../../errors/AppError';
 import { TProject } from './project.interface';
 import { Project } from './project.model';
 
 const createProjectIntoDB = async (payload: TProject) => {
+  const slug = await createUniqueSlug(Project, payload.title);
+  payload.slug = slug;
   const result = await Project.create(payload);
   return result;
 };
@@ -13,8 +17,15 @@ const getAllProjectsFromDB = async () => {
   return result;
 };
 
-const getSingleProjectFromDB = async (id: string) => {
-  const result = await Project.findOne({ _id: id });
+const getSingleProjectFromDB = async (idOrSlug: string) => {
+  const query: any = {};
+  if (Types.ObjectId.isValid(idOrSlug)) {
+    query._id = idOrSlug;
+  } else {
+    query.slug = idOrSlug;
+  }
+
+  const result = await Project.findOne(query);
   return result;
 };
 

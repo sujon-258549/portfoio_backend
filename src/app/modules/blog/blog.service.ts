@@ -1,9 +1,13 @@
 import { StatusCodes } from 'http-status-codes';
+import { Types } from 'mongoose';
 import AppError from '../../errors/AppError';
+import { createUniqueSlug } from '../../utils/slugGenerator';
 import { TBlog } from './blog.interface';
 import { Blog } from './blog.model';
 
 const createBlogIntoDB = async (payload: TBlog) => {
+  const slug = await createUniqueSlug(Blog, payload.title);
+  payload.slug = slug;
   const result = await Blog.create(payload);
   return result;
 };
@@ -14,8 +18,15 @@ const getAllBlogsFromDB = async (isAdmin: boolean) => {
   return result;
 };
 
-const getSingleBlogFromDB = async (id: string, isAdmin: boolean) => {
-  const query = isAdmin ? { _id: id } : { _id: id, isActive: true };
+const getSingleBlogFromDB = async (idOrSlug: string, isAdmin: boolean) => {
+  const query: any = isAdmin ? {} : { isActive: true };
+
+  if (Types.ObjectId.isValid(idOrSlug)) {
+    query._id = idOrSlug;
+  } else {
+    query.slug = idOrSlug;
+  }
+
   const result = await Blog.findOne(query);
   return result;
 };
