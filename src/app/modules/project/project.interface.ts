@@ -24,6 +24,7 @@ export type TProject = {
   _id?: string;
   sl?: string;
   title: string;
+  slug: string;
   category: string;
   thumbnail: string;
   image: string;

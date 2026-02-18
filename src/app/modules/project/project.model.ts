@@ -37,6 +37,7 @@ const projectSchema = new Schema<TProject>(
     // No explicit _id definition needed as Mongoose handles it automatically
     sl: { type: String },
     title: { type: String, required: true },
+    slug: { type: String, required: true, unique: true },
     category: { type: String, required: true },
     thumbnail: { type: String, required: true },
     image: { type: String, required: true },

@@ -41,6 +41,7 @@ const updateMyProfile = async (
 
 // ─── Request Email Update — sends OTP to the NEW email ───────────────────────
 const requestEmailUpdate = async (email: string, newEmail: string) => {
+  console.log(email, newEmail);
   // Check new email is not already taken
   const existing = await User.findOne({ email: newEmail });
   if (existing) {

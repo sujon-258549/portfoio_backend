@@ -8,8 +8,8 @@ const createTransporter = () =>
     port: 587,
     secure: false,
     auth: {
-      user: config.email_user || 'mdsujon258549@gmail.com',
-      pass: config.email_pass || 'zxyr hvfh yhat mree',
+      user: config.email_user,
+      pass: config.email_pass,
     },
   });
 
