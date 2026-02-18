@@ -24,6 +24,7 @@ const headerSchema = new Schema<THeader>(
   {
     type: { type: String, required: true, enum: ['header'] },
     isActive: { type: Boolean, default: true },
+    isSideOpen: { type: Boolean, default: true },
     logo: { type: String, required: true },
     logoAlt: { type: String, required: true },
     logoHeight: { type: Number, required: true },

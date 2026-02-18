@@ -17,6 +17,7 @@ const headerValidationSchema = z.object({
   body: z.object({
     type: z.literal('header'),
     isActive: z.boolean().optional(),
+    isSideOpen: z.boolean().optional(),
     logo: z.string({ message: 'Logo is required' }),
     logoAlt: z.string({ message: 'Logo alt is required' }),
     logoHeight: z.number({ message: 'Logo height is required' }),
