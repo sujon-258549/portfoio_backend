@@ -22,6 +22,7 @@ export type TDetailedDescription = {
 
 export type TProject = {
   _id?: string;
+  sl?: string;
   title: string;
   category: string;
   thumbnail: string;

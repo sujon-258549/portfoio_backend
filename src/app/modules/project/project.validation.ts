@@ -25,6 +25,7 @@ const projectDetailedDescriptionValidationSchema = z.object({
 const createProjectValidationSchema = z.object({
   body: z.object({
     _id: z.string().optional(),
+    sl: z.string().optional(),
     title: z.string(),
     category: z.string(),
     thumbnail: z.string(),
@@ -55,6 +56,7 @@ const createProjectValidationSchema = z.object({
 
 const updateProjectValidationSchema = z.object({
   body: z.object({
+    sl: z.string().optional(),
     title: z.string().optional(),
     category: z.string().optional(),
     thumbnail: z.string().optional(),
