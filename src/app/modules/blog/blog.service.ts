@@ -8,13 +8,13 @@ const createBlogIntoDB = async (payload: TBlog) => {
   return result;
 };
 
-const getAllBlogsFromDB = async (isAdmin: boolean = false) => {
+const getAllBlogsFromDB = async (isAdmin: boolean) => {
   const query = isAdmin ? {} : { isActive: true };
   const result = await Blog.find(query).sort({ createdAt: -1 });
   return result;
 };
 
-const getSingleBlogFromDB = async (id: string, isAdmin: boolean = false) => {
+const getSingleBlogFromDB = async (id: string, isAdmin: boolean) => {
   const query = isAdmin ? { _id: id } : { _id: id, isActive: true };
   const result = await Blog.findOne(query);
   return result;

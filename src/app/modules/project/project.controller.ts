@@ -35,7 +35,7 @@ const getAllProjects = catchAsync(async (req: Request, res: Response) => {
     }
   }
 
-  const result = await ProjectServices.getAllProjectsFromDB(isAdmin);
+  const result = await ProjectServices.getAllProjectsFromDB();
 
   sendResponse(res, {
     statusCode: StatusCodes.OK,
@@ -64,10 +64,7 @@ const getSingleProject = catchAsync(async (req: Request, res: Response) => {
     }
   }
 
-  const result = await ProjectServices.getSingleProjectFromDB(
-    id as string,
-    isAdmin,
-  );
+  const result = await ProjectServices.getSingleProjectFromDB(id as string);
 
   sendResponse(res, {
     statusCode: StatusCodes.OK,

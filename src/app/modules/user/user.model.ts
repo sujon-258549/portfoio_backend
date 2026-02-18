@@ -4,6 +4,9 @@ import { IUser } from './user.interface';
 
 const userSchema = new Schema<IUser>(
   {
+    name: { type: String, default: '' },
+    photo: { type: String, default: '' },
+    bio: { type: String, default: '' },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true, select: false },
     passwordChangedAt: { type: Date },
@@ -16,6 +19,10 @@ const userSchema = new Schema<IUser>(
     isPasswordChangeRequired: { type: Boolean, default: true },
     isDeleted: { type: Boolean, default: false },
     lastLogin: { type: Date },
+    // Email update OTP flow
+    pendingEmail: { type: String, select: false },
+    emailUpdateOtp: { type: String, select: false },
+    emailUpdateOtpExpiresAt: { type: Date, select: false },
   },
   {
     timestamps: true,

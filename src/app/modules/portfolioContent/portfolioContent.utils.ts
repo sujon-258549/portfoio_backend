@@ -11,6 +11,9 @@ import { Experience } from './experience/experience.model';
 import { Header } from './header/header.model';
 import { Services } from './services/services.model';
 import { BlogHeader } from './blogHeader/blogHeader.model';
+import { Workflow } from './workflow/workflow.model';
+import { ReviewSectionHeader } from './reviewSectionHeader/reviewSectionHeader.model';
+import { WelcomeModal } from './welcomeModal/welcomeModal.model';
 
 export const modelMapper: Record<string, Model<any>> = {
   footer: Footer,
@@ -25,4 +28,7 @@ export const modelMapper: Record<string, Model<any>> = {
   header: Header,
   services: Services,
   blog_header: BlogHeader,
+  workflow: Workflow,
+  review_section_header: ReviewSectionHeader,
+  welcome_modal: WelcomeModal,
 };

@@ -10,6 +10,9 @@ import { ExperienceValidations } from './experience/experience.validation';
 import { HeaderValidations } from './header/header.validation';
 import { ServicesValidations } from './services/services.validation';
 import { BlogHeaderValidations } from './blogHeader/blogHeader.validation';
+import { WorkflowValidations } from './workflow/workflow.validation';
+import { ReviewSectionHeaderValidations } from './reviewSectionHeader/reviewSectionHeader.validation';
+import { WelcomeModalValidations } from './welcomeModal/welcomeModal.validation';
 
 import catchAsync from '../../utils/catchAsync';
 
@@ -26,6 +29,10 @@ export const validationMapper: Record<string, any> = {
   header: HeaderValidations.headerValidationSchema,
   services: ServicesValidations.servicesValidationSchema,
   blog_header: BlogHeaderValidations.blogHeaderValidationSchema,
+  workflow: WorkflowValidations.workflowValidationSchema,
+  review_section_header:
+    ReviewSectionHeaderValidations.reviewSectionHeaderValidationSchema,
+  welcome_modal: WelcomeModalValidations.welcomeModalValidationSchema,
 };
 
 export const dynamicValidateRequest = catchAsync(
