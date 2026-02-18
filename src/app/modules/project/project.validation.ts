@@ -49,6 +49,7 @@ const createProjectValidationSchema = z.object({
       .array(projectDetailedDescriptionValidationSchema)
       .default([]),
     gallery: z.array(z.string()),
+    isActive: z.boolean().default(true),
   }),
 });
 
@@ -78,6 +79,7 @@ const updateProjectValidationSchema = z.object({
       .array(projectDetailedDescriptionValidationSchema)
       .optional(),
     gallery: z.array(z.string()).optional(),
+    isActive: z.boolean().optional(),
   }),
 });
 

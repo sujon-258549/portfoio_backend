@@ -21,4 +21,5 @@ export type TExperienceContent = {
   titleColor: string;
   description: string;
   experiences: TExperienceItem[];
+  isActive: boolean;
 };

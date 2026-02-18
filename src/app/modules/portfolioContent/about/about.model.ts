@@ -32,6 +32,7 @@ const aboutSchema = new Schema<TAboutContent>(
     title: { type: String, required: true },
     titleHighlight: { type: String, required: true },
     type: { type: String, required: true, unique: true, default: 'about' },
+    isActive: { type: Boolean, default: true },
   },
   {
     timestamps: true,

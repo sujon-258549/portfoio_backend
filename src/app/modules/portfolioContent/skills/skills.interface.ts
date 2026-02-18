@@ -11,4 +11,5 @@ export type TSkillsContent = {
   titleHighlight: string;
   categories: TSkillCategory[];
   type: 'skills';
+  isActive: boolean;
 };

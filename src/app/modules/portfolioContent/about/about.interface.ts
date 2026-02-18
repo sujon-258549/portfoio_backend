@@ -22,4 +22,5 @@ export type TAboutContent = {
   title: string;
   titleHighlight: string;
   type: 'about';
+  isActive: boolean;
 };

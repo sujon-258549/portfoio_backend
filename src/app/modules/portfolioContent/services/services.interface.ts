@@ -12,4 +12,5 @@ export type TServices = {
   titleHighlight: string;
   services: TServiceItem[];
   type: 'services';
+  isActive: boolean;
 };

@@ -33,6 +33,7 @@ const heroValidationSchema = z.object({
     techHighlights: z.array(z.string()),
     techStack: z.array(heroTechStackValidationSchema),
     type: z.literal('hero'),
+    isActive: z.boolean().default(true),
   }),
 });
 

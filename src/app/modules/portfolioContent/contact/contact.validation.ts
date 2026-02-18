@@ -14,6 +14,7 @@ const createContactValidationSchema = z.object({
     title: z.string(),
     titleColor: z.string(),
     contactCards: z.array(contactCardValidationSchema),
+    isActive: z.boolean().default(true).optional(),
   }),
 });
 

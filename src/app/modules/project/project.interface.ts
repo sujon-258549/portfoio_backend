@@ -44,4 +44,7 @@ export type TProject = {
   plan: string;
   detailedDescriptions: TDetailedDescription[];
   gallery: string[];
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+  isActive: boolean;
 };

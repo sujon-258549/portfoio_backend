@@ -8,13 +8,15 @@ const createProjectIntoDB = async (payload: TProject) => {
   return result;
 };
 
-const getAllProjectsFromDB = async () => {
-  const result = await Project.find();
+const getAllProjectsFromDB = async (isAdmin: boolean = false) => {
+  const query = isAdmin ? {} : { isActive: true };
+  const result = await Project.find(query).sort({ sl: -1 });
   return result;
 };
 
-const getSingleProjectFromDB = async (id: string) => {
-  const result = await Project.findById(id);
+const getSingleProjectFromDB = async (id: string, isAdmin: boolean = false) => {
+  const query = isAdmin ? { _id: id } : { _id: id, isActive: true };
+  const result = await Project.findOne(query);
   return result;
 };
 

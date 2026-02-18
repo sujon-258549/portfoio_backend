@@ -5,6 +5,7 @@ import { AdminRoutes } from '../modules/admin/admin.route';
 import { PortfolioContentRoutes } from '../modules/portfolioContent/portfolioContent.route';
 import { ContactMessageRoutes } from '../modules/contactMessage/contactMessage.route';
 import { ProjectRoutes } from '../modules/project/project.route';
+import { BlogRoutes } from '../modules/blog/blog.route';
 
 const router = Router();
 
@@ -32,6 +33,10 @@ const moduleRoutes = [
   {
     path: '/projects',
     route: ProjectRoutes,
+  },
+  {
+    path: '/blogs',
+    route: BlogRoutes,
   },
 ];
 

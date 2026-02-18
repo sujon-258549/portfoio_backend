@@ -3,6 +3,7 @@ import { Schema, model } from 'mongoose';
 const dynamicSchema = new Schema(
   {
     type: { type: String, required: true, unique: true },
+    isActive: { type: Boolean, default: true },
   },
   {
     timestamps: true,

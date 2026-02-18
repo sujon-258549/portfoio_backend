@@ -4,20 +4,20 @@ import jwt, { JwtPayload } from 'jsonwebtoken';
 import config from '../../config';
 import catchAsync from '../../utils/catchAsync';
 import sendResponse from '../../utils/sendResponse';
-import { ProjectServices } from './project.service';
+import { BlogServices } from './blog.service';
 
-const createProject = catchAsync(async (req: Request, res: Response) => {
-  const result = await ProjectServices.createProjectIntoDB(req.body);
+const createBlog = catchAsync(async (req: Request, res: Response) => {
+  const result = await BlogServices.createBlogIntoDB(req.body);
 
   sendResponse(res, {
     statusCode: StatusCodes.OK,
     success: true,
-    message: 'Project created successfully',
+    message: 'Blog created successfully',
     data: result,
   });
 });
 
-const getAllProjects = catchAsync(async (req: Request, res: Response) => {
+const getAllBlogs = catchAsync(async (req: Request, res: Response) => {
   const token = req.headers.authorization;
   let isAdmin = false;
 
@@ -35,17 +35,17 @@ const getAllProjects = catchAsync(async (req: Request, res: Response) => {
     }
   }
 
-  const result = await ProjectServices.getAllProjectsFromDB(isAdmin);
+  const result = await BlogServices.getAllBlogsFromDB(isAdmin);
 
   sendResponse(res, {
     statusCode: StatusCodes.OK,
     success: true,
-    message: 'Projects retrieved successfully',
+    message: 'Blogs retrieved successfully',
     data: result,
   });
 });
 
-const getSingleProject = catchAsync(async (req: Request, res: Response) => {
+const getSingleBlog = catchAsync(async (req: Request, res: Response) => {
   const { id } = req.params;
   const token = req.headers.authorization;
   let isAdmin = false;
@@ -64,50 +64,44 @@ const getSingleProject = catchAsync(async (req: Request, res: Response) => {
     }
   }
 
-  const result = await ProjectServices.getSingleProjectFromDB(
-    id as string,
-    isAdmin,
-  );
+  const result = await BlogServices.getSingleBlogFromDB(id as string, isAdmin);
 
   sendResponse(res, {
     statusCode: StatusCodes.OK,
     success: true,
-    message: 'Project retrieved successfully',
+    message: 'Blog retrieved successfully',
     data: result,
   });
 });
 
-const updateProject = catchAsync(async (req: Request, res: Response) => {
+const updateBlog = catchAsync(async (req: Request, res: Response) => {
   const { id } = req.params;
-  const result = await ProjectServices.updateProjectInDB(
-    id as string,
-    req.body,
-  );
+  const result = await BlogServices.updateBlogInDB(id as string, req.body);
 
   sendResponse(res, {
     statusCode: StatusCodes.OK,
     success: true,
-    message: 'Project updated successfully',
+    message: 'Blog updated successfully',
     data: result,
   });
 });
 
-const deleteProject = catchAsync(async (req: Request, res: Response) => {
+const deleteBlog = catchAsync(async (req: Request, res: Response) => {
   const { id } = req.params;
-  const result = await ProjectServices.deleteProjectFromDB(id as string);
+  const result = await BlogServices.deleteBlogFromDB(id as string);
 
   sendResponse(res, {
     statusCode: StatusCodes.OK,
     success: true,
-    message: 'Project deleted successfully',
+    message: 'Blog deleted successfully',
     data: result,
   });
 });
 
-export const ProjectControllers = {
-  createProject,
-  getAllProjects,
-  getSingleProject,
-  updateProject,
-  deleteProject,
+export const BlogControllers = {
+  createBlog,
+  getAllBlogs,
+  getSingleBlog,
+  updateBlog,
+  deleteBlog,
 };

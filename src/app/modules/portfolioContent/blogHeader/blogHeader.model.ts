@@ -1,11 +1,10 @@
 import { Schema, model } from 'mongoose';
-import { TProjectSectionHeader } from './projectSectionHeader.interface';
+import { TBlogHeader } from './blogHeader.interface';
 
-const projectSectionHeaderSchema = new Schema<TProjectSectionHeader>(
+const blogHeaderSchema = new Schema<TBlogHeader>(
   {
     badge: { type: String, required: true },
     badgeIcon: { type: String, required: true },
-    completedCount: { type: String, required: true },
     description: { type: String, required: true },
     title: { type: String, required: true },
     titleHighlight: { type: String, required: true },
@@ -13,7 +12,7 @@ const projectSectionHeaderSchema = new Schema<TProjectSectionHeader>(
       type: String,
       required: true,
       unique: true,
-      default: 'project-section-header',
+      default: 'blog_header',
     },
     isActive: { type: Boolean, default: true },
   },
@@ -22,7 +21,4 @@ const projectSectionHeaderSchema = new Schema<TProjectSectionHeader>(
   },
 );
 
-export const ProjectSectionHeader = model<TProjectSectionHeader>(
-  'ProjectSectionHeader',
-  projectSectionHeaderSchema,
-);
+export const BlogHeader = model<TBlogHeader>('BlogHeader', blogHeaderSchema);

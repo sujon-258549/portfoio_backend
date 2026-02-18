@@ -9,6 +9,7 @@ import { EducationValidations } from './education/education.validation';
 import { ExperienceValidations } from './experience/experience.validation';
 import { HeaderValidations } from './header/header.validation';
 import { ServicesValidations } from './services/services.validation';
+import { BlogHeaderValidations } from './blogHeader/blogHeader.validation';
 
 import catchAsync from '../../utils/catchAsync';
 
@@ -24,6 +25,7 @@ export const validationMapper: Record<string, any> = {
   experience: ExperienceValidations.experienceValidationSchema,
   header: HeaderValidations.headerValidationSchema,
   services: ServicesValidations.servicesValidationSchema,
+  blog_header: BlogHeaderValidations.blogHeaderValidationSchema,
 };
 
 export const dynamicValidateRequest = catchAsync(

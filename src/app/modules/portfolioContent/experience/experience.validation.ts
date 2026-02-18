@@ -24,6 +24,7 @@ const experienceValidationSchema = z.object({
     titleColor: z.string(),
     description: z.string(),
     experiences: z.array(experienceItemValidationSchema),
+    isActive: z.boolean().default(true),
   }),
 });
 

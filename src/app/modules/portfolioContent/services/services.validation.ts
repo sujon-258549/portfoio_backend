@@ -33,6 +33,7 @@ const servicesValidationSchema = z.object({
       message: 'Services are required',
     }),
     type: z.literal('services'),
+    isActive: z.boolean().default(true).optional(),
   }),
 });
 

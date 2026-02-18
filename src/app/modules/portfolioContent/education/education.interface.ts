@@ -19,4 +19,5 @@ export type TEducationContent = {
   titleColor: string;
   description: string;
   education: TEducationItem[];
+  isActive: boolean;
 };

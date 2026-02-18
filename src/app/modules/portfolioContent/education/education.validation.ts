@@ -22,6 +22,7 @@ const educationValidationSchema = z.object({
     titleColor: z.string(),
     description: z.string(),
     education: z.array(educationItemValidationSchema),
+    isActive: z.boolean().default(true),
   }),
 });
 

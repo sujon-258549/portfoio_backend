@@ -18,6 +18,7 @@ const contactSchema = new Schema<TContact>(
     title: { type: String, required: true },
     titleColor: { type: String, required: true },
     contactCards: [contactCardSchema],
+    isActive: { type: Boolean, default: true },
   },
   {
     timestamps: true,

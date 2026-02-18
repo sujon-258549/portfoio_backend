@@ -26,6 +26,7 @@ const educationSchema = new Schema<TEducationContent>(
     titleColor: { type: String, required: true },
     description: { type: String, required: true },
     education: { type: [educationItemSchema], required: true },
+    isActive: { type: Boolean, default: true },
   },
   {
     timestamps: true,

@@ -44,14 +44,22 @@ const insertOrUpdateContentIntoDB = async (
   return result;
 };
 
-const getContentFromDB = async (contentType: string) => {
+const getContentFromDB = async (
+  contentType: string,
+  isAdmin: boolean = false,
+) => {
   const normalizedType = contentType?.trim().toLowerCase();
   const Model = modelMapper[normalizedType] || modelMapper.generic;
   if (!Model) {
     throw new AppError(StatusCodes.NOT_FOUND, 'Content type not supported');
   }
 
-  const result = await Model.findOne({ type: contentType });
+  const query: Record<string, any> = { type: contentType };
+  if (!isAdmin) {
+    query.isActive = true;
+  }
+
+  const result = await Model.findOne(query);
   return result;
 };
 

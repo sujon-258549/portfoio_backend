@@ -28,6 +28,7 @@ const experienceSchema = new Schema<TExperienceContent>(
     titleColor: { type: String, required: true },
     description: { type: String, required: true },
     experiences: { type: [experienceItemSchema], required: true },
+    isActive: { type: Boolean, default: true },
   },
   {
     timestamps: true,

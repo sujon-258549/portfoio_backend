@@ -48,6 +48,7 @@ const heroSchema = new Schema<THeroContent>(
     techHighlights: { type: [String], required: true },
     techStack: { type: [heroTechStackSchema], required: true },
     type: { type: String, required: true, unique: true, default: 'hero' },
+    isActive: { type: Boolean, default: true },
   },
   {
     timestamps: true,

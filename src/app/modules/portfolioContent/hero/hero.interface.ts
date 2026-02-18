@@ -30,4 +30,5 @@ export type THeroContent = {
   techHighlights: string[];
   techStack: THeroTechStack[];
   type: 'hero';
+  isActive: boolean;
 };

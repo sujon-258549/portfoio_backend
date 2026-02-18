@@ -19,6 +19,7 @@ const servicesSchema = new Schema<TServices>(
     titleHighlight: { type: String, required: true },
     services: { type: [serviceItemSchema], required: true },
     type: { type: String, default: 'services' },
+    isActive: { type: Boolean, default: true },
   },
   {
     timestamps: true,

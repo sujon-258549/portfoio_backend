@@ -18,6 +18,7 @@ const skillsSchema = new Schema<TSkillsContent>(
     titleHighlight: { type: String, required: true },
     categories: { type: [skillCategorySchema], required: true },
     type: { type: String, required: true, unique: true, default: 'skills' },
+    isActive: { type: Boolean, default: true },
   },
   {
     timestamps: true,
