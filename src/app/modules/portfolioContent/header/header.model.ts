@@ -14,6 +14,8 @@ const navLinkSchema = new Schema<TNavLink>(
   {
     text: { type: String, required: true },
     link: { type: String, required: true },
+    icon: { type: String, required: true },
+    showInHeader: { type: Boolean, default: false },
   },
   { _id: false },
 );
@@ -21,6 +23,7 @@ const navLinkSchema = new Schema<TNavLink>(
 const headerSchema = new Schema<THeader>(
   {
     type: { type: String, required: true, enum: ['header'] },
+    isActive: { type: Boolean, default: true },
     logo: { type: String, required: true },
     logoAlt: { type: String, required: true },
     logoHeight: { type: Number, required: true },
