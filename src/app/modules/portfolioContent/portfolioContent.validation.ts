@@ -13,6 +13,7 @@ import { BlogHeaderValidations } from './blogHeader/blogHeader.validation';
 import { WorkflowValidations } from './workflow/workflow.validation';
 import { ReviewSectionHeaderValidations } from './reviewSectionHeader/reviewSectionHeader.validation';
 import { WelcomeModalValidations } from './welcomeModal/welcomeModal.validation';
+import { CreativeSectionValidations } from './creativeSection/creativeSection.validation';
 
 import catchAsync from '../../utils/catchAsync';
 
@@ -33,6 +34,7 @@ export const validationMapper: Record<string, any> = {
   review_section_header:
     ReviewSectionHeaderValidations.reviewSectionHeaderValidationSchema,
   welcome_modal: WelcomeModalValidations.welcomeModalValidationSchema,
+  creative_section: CreativeSectionValidations.creativeSectionValidationSchema,
 };
 
 export const dynamicValidateRequest = catchAsync(

@@ -23,10 +23,10 @@ export type TFooter = {
   description: string;
   socialLinks: TSocialLink[];
   linksTitle: string;
-  linksTitleIcon: string;
+  linksTitleIcon?: string;
   quickLinks: TQuickLink[];
   contactTitle: string;
-  contactTitleIcon: string;
+  contactTitleIcon?: string;
   contactItems: TContactItem[];
   craftedBy: string;
   copyrightText: string;
