@@ -110,6 +110,127 @@ export const passwordChangedTemplate = (data: { name?: string }) => {
   `;
 };
 
+// ─── Contact Notification Template ──────────────────────────────────────────
+export const contactNotificationTemplate = (data: {
+  name: string;
+  email?: string;
+  phone?: string;
+  subject: string;
+  message: string;
+}) => {
+  const now = new Date();
+  const date = now.toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  });
+  const time = now.toLocaleTimeString('en-US', {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: true,
+  });
+
+  return `
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body style="margin:0; padding:0; font-family: -apple-system, 'Segoe UI', Roboto, sans-serif; background:#f4f4f5;">
+      <table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f5; padding:24px 0;">
+        <tr>
+          <td align="center">
+            <table width="560" cellpadding="0" cellspacing="0" style="background:#ffffff; border-radius:8px; overflow:hidden; border:1px solid #e4e4e7;">
+
+              <!-- Header -->
+              <tr>
+                <td style="background:linear-gradient(135deg, #6366f1, #8b5cf6); padding:20px 24px;">
+                  <table width="100%" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td>
+                        <span style="font-size:20px; line-height:1;">💬</span>
+                        <span style="font-size:16px; font-weight:600; color:#fff; margin-left:8px; vertical-align:middle;">New Contact Message</span>
+                      </td>
+                      <td align="right">
+                        <span style="font-size:12px; color:rgba(255,255,255,0.8);">${date} • ${time}</span>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <!-- Content -->
+              <tr>
+                <td style="padding:20px 24px;">
+
+                  <!-- Info rows -->
+                  <table width="100%" cellpadding="0" cellspacing="0" style="font-size:14px; color:#27272a;">
+                    <tr>
+                      <td style="padding:8px 0; color:#71717a; width:70px; vertical-align:top;">Name</td>
+                      <td style="padding:8px 0; font-weight:600;">${data.name}</td>
+                    </tr>
+                    ${
+                      data.email
+                        ? `<tr>
+                      <td style="padding:8px 0; color:#71717a; vertical-align:top;">Email</td>
+                      <td style="padding:8px 0;"><a href="mailto:${data.email}" style="color:#6366f1; text-decoration:none;">${data.email}</a></td>
+                    </tr>`
+                        : ''
+                    }
+                    ${
+                      data.phone
+                        ? `<tr>
+                      <td style="padding:8px 0; color:#71717a; vertical-align:top;">Phone</td>
+                      <td style="padding:8px 0;"><a href="tel:${data.phone}" style="color:#6366f1; text-decoration:none;">${data.phone}</a></td>
+                    </tr>`
+                        : ''
+                    }
+                    <tr>
+                      <td style="padding:8px 0; color:#71717a; vertical-align:top;">Subject</td>
+                      <td style="padding:8px 0; font-weight:500;">${data.subject}</td>
+                    </tr>
+                  </table>
+
+                  <!-- Divider -->
+                  <div style="height:1px; background:#e4e4e7; margin:12px 0;"></div>
+
+                  <!-- Message -->
+                  <p style="font-size:12px; color:#a1a1aa; text-transform:uppercase; letter-spacing:0.5px; margin:0 0 8px 0;">Message</p>
+                  <div style="background:#fafafa; border-left:3px solid #8b5cf6; padding:12px 16px; border-radius:0 6px 6px 0;">
+                    <p style="font-size:14px; line-height:1.6; color:#3f3f46; margin:0; white-space:pre-wrap;">${data.message}</p>
+                  </div>
+
+                  ${
+                    data.email
+                      ? `<!-- Reply Button -->
+                  <div style="margin-top:20px; text-align:center;">
+                    <a href="mailto:${data.email}?subject=Re: ${data.subject}" style="display:inline-block; background:#6366f1; color:#fff; text-decoration:none; padding:10px 24px; border-radius:6px; font-size:13px; font-weight:600;">
+                      Reply to ${data.name}
+                    </a>
+                  </div>`
+                      : ''
+                  }
+
+                </td>
+              </tr>
+
+              <!-- Footer -->
+              <tr>
+                <td style="padding:14px 24px; background:#fafafa; border-top:1px solid #e4e4e7; text-align:center;">
+                  <p style="font-size:11px; color:#a1a1aa; margin:0;">Portfolio Contact Form • © ${new Date().getFullYear()}</p>
+                </td>
+              </tr>
+
+            </table>
+          </td>
+        </tr>
+      </table>
+    </body>
+    </html>
+  `;
+};
+
 // ─── Send Helper ─────────────────────────────────────────────────────────────
 export const sendEmail = async (to: string, html: string, subject?: string) => {
   const transporter = createTransporter();
