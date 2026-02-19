@@ -15,6 +15,8 @@ import { Workflow } from './workflow/workflow.model';
 import { ReviewSectionHeader } from './reviewSectionHeader/reviewSectionHeader.model';
 import { WelcomeModal } from './welcomeModal/welcomeModal.model';
 
+import { CreativeSection } from './creativeSection/creativeSection.model';
+
 export const modelMapper: Record<string, Model<any>> = {
   footer: Footer,
   contact: Contact,
@@ -31,4 +33,5 @@ export const modelMapper: Record<string, Model<any>> = {
   workflow: Workflow,
   review_section_header: ReviewSectionHeader,
   welcome_modal: WelcomeModal,
+  creative_section: CreativeSection,
 };
