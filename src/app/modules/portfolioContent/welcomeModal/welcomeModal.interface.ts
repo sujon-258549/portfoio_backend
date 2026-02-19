@@ -16,4 +16,5 @@ export interface IWelcomeModal extends Document {
   titleHighlight: string;
   type: 'welcome_modal';
   welcomeBadge: string;
+  slNumber?: number | string;
 }

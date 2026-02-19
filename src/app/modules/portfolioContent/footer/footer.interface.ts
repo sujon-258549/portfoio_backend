@@ -30,4 +30,5 @@ export type TFooter = {
   contactItems: TContactItem[];
   craftedBy: string;
   copyrightText: string;
+  slNumber?: number | string;
 };

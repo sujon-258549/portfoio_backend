@@ -16,4 +16,5 @@ export type TWorkflow = {
   isActive: boolean;
   steps: TWorkflowStep[];
   type: 'workflow';
+  slNumber?: number | string;
 };

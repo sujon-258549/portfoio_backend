@@ -7,4 +7,5 @@ export type TProjectSectionHeader = {
   titleHighlight: string;
   type: 'project-section-header';
   isActive: boolean;
+  slNumber?: number | string;
 };

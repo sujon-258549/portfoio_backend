@@ -23,4 +23,5 @@ export type TAboutContent = {
   titleHighlight: string;
   type: 'about';
   isActive: boolean;
+  slNumber?: number | string;
 };

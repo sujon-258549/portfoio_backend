@@ -13,4 +13,5 @@ export type TServices = {
   services: TServiceItem[];
   type: 'services';
   isActive: boolean;
+  slNumber?: number | string;
 };

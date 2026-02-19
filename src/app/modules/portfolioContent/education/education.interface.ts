@@ -20,4 +20,5 @@ export type TEducationContent = {
   description: string;
   education: TEducationItem[];
   isActive: boolean;
+  slNumber?: number | string;
 };

@@ -14,6 +14,10 @@ import { BlogHeader } from './blogHeader/blogHeader.model';
 import { Workflow } from './workflow/workflow.model';
 import { ReviewSectionHeader } from './reviewSectionHeader/reviewSectionHeader.model';
 import { WelcomeModal } from './welcomeModal/welcomeModal.model';
+import { FAQ } from './faq/faq.model';
+import { TrustSection } from './trustSection/trustSection.model';
+
+import { CreativeSection } from './creativeSection/creativeSection.model';
 
 export const modelMapper: Record<string, Model<any>> = {
   footer: Footer,
@@ -31,4 +35,7 @@ export const modelMapper: Record<string, Model<any>> = {
   workflow: Workflow,
   review_section_header: ReviewSectionHeader,
   welcome_modal: WelcomeModal,
+  creative_section: CreativeSection,
+  faq: FAQ,
+  trust_section: TrustSection,
 };

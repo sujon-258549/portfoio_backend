@@ -12,4 +12,5 @@ export type TContact = {
   titleColor: string;
   contactCards: TContactCard[];
   isActive: boolean;
+  slNumber?: number | string;
 };

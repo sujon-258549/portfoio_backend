@@ -6,4 +6,5 @@ export type TCreativeSection = {
   description: string;
   isActive: boolean;
   type: string;
+  slNumber?: number | string;
 };

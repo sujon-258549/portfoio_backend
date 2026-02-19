@@ -31,4 +31,5 @@ export type THeroContent = {
   techStack: THeroTechStack[];
   type: 'hero';
   isActive: boolean;
+  slNumber?: number | string;
 };

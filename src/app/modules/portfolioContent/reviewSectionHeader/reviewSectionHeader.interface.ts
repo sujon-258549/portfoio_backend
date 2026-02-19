@@ -6,4 +6,5 @@ export type TReviewSectionHeader = {
   title: string;
   titleHighlight: string;
   type: 'review_section_header';
+  slNumber?: number | string;
 };

@@ -22,4 +22,5 @@ export type TExperienceContent = {
   description: string;
   experiences: TExperienceItem[];
   isActive: boolean;
+  slNumber?: number | string;
 };

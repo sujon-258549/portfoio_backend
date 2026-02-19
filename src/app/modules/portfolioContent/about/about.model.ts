@@ -33,6 +33,7 @@ const aboutSchema = new Schema<TAboutContent>(
     titleHighlight: { type: String, required: true },
     type: { type: String, required: true, unique: true, default: 'about' },
     isActive: { type: Boolean, default: true },
+    slNumber: { type: Schema.Types.Mixed },
   },
   {
     timestamps: true,

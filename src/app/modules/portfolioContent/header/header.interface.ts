@@ -24,4 +24,5 @@ export type THeader = {
     primary: THeaderButton;
     secondary: THeaderButton;
   };
+  slNumber?: number | string;
 };

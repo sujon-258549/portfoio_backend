@@ -12,4 +12,5 @@ export type TSkillsContent = {
   categories: TSkillCategory[];
   type: 'skills';
   isActive: boolean;
+  slNumber?: number | string;
 };

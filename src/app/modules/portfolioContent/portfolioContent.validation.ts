@@ -14,6 +14,8 @@ import { WorkflowValidations } from './workflow/workflow.validation';
 import { ReviewSectionHeaderValidations } from './reviewSectionHeader/reviewSectionHeader.validation';
 import { WelcomeModalValidations } from './welcomeModal/welcomeModal.validation';
 import { CreativeSectionValidations } from './creativeSection/creativeSection.validation';
+import { FAQValidations } from './faq/faq.validation';
+import { TrustSectionValidations } from './trustSection/trustSection.validation';
 
 import catchAsync from '../../utils/catchAsync';
 
@@ -35,6 +37,8 @@ export const validationMapper: Record<string, any> = {
     ReviewSectionHeaderValidations.reviewSectionHeaderValidationSchema,
   welcome_modal: WelcomeModalValidations.welcomeModalValidationSchema,
   creative_section: CreativeSectionValidations.creativeSectionValidationSchema,
+  faq: FAQValidations.faqValidationSchema,
+  trust_section: TrustSectionValidations.trustSectionValidationSchema,
 };
 
 export const dynamicValidateRequest = catchAsync(

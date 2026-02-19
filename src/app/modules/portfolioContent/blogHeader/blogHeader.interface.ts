@@ -6,4 +6,5 @@ export type TBlogHeader = {
   titleHighlight: string;
   type: 'blog_header';
   isActive: boolean;
+  slNumber?: number | string;
 };
