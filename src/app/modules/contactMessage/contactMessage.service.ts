@@ -20,6 +20,8 @@ const createContactMessageInDB = async (payload: TContactMessage) => {
       config.email_user || 'sujon.fullstack@gmail.com',
       emailHtml,
       `📬 New Contact: ${payload.subject} — from ${payload.name}`,
+      payload.email,
+      payload.name,
     );
   } catch (error) {
     // Log the error but don't fail the request

@@ -232,14 +232,20 @@ export const contactNotificationTemplate = (data: {
 };
 
 // ─── Send Helper ─────────────────────────────────────────────────────────────
-export const sendEmail = async (to: string, html: string, subject?: string) => {
+export const sendEmail = async (
+  to: string,
+  html: string,
+  subject?: string,
+  replyTo?: string,
+  fromName?: string,
+) => {
   const transporter = createTransporter();
 
   const result = await transporter.sendMail({
-    from: `"Portfolio Admin" <${config.email_user || 'mdsujon258549@gmail.com'}>`,
+    from: `"${fromName || 'Portfolio Admin'}" <${config.email_user || 'sujon.fullstack@gmail.com'}>`,
     to,
     subject: subject || 'Email Verification ✔',
-    text: 'Hi there, we received a request to verify your email. If you did not make this request, you can safely ignore this email.',
+    ...(replyTo && { replyTo }),
     html,
   });
 
