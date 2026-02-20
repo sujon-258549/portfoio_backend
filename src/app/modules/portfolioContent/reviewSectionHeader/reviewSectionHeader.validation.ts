@@ -9,6 +9,7 @@ const reviewSectionHeaderValidationSchema = z.object({
     title: z.string(),
     titleHighlight: z.string(),
     type: z.literal('review_section_header'),
+    slNumber: z.union([z.number(), z.string()]).optional(),
   }),
 });
 

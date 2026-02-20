@@ -10,6 +10,7 @@ const projectSectionHeaderValidationSchema = z.object({
     titleHighlight: z.string(),
     type: z.literal('project-section-header'),
     isActive: z.boolean().default(true).optional(),
+    slNumber: z.union([z.number(), z.string()]).optional(),
   }),
 });
 

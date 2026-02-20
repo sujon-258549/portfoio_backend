@@ -34,6 +34,7 @@ const servicesValidationSchema = z.object({
     }),
     type: z.literal('services'),
     isActive: z.boolean().default(true).optional(),
+    slNumber: z.union([z.number(), z.string()]).optional(),
   }),
 });
 
