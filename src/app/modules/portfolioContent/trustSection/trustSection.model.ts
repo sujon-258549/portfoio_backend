@@ -27,6 +27,7 @@ const trustSectionSchema = new Schema<TTrustSection>(
     },
     brands: [brandSchema],
     stats: [statSchema],
+    slNumber: { type: Schema.Types.Mixed },
   },
   {
     timestamps: true,

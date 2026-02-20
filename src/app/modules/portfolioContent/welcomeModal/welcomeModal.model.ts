@@ -21,6 +21,7 @@ const welcomeModalSchema = new Schema<IWelcomeModal>(
     ctaLink: { type: String, required: true },
     isActive: { type: Boolean, default: true },
     quickLinks: [quickLinkSchema],
+    slNumber: { type: Schema.Types.Mixed },
   },
   {
     timestamps: true,
