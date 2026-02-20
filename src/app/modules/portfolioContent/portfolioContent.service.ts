@@ -35,11 +35,15 @@ const insertOrUpdateContentIntoDB = async (
 
   // Use findOneAndUpdate with upsert: true to either update the existing record or create it
   // Filter by 'type' field to identify the correct document
-  const result = await Model.findOneAndUpdate({ type: contentType }, payload, {
-    new: true,
-    upsert: true,
-    runValidators: true,
-  });
+  const result = await Model.findOneAndUpdate(
+    { type: normalizedType },
+    payload,
+    {
+      new: true,
+      upsert: true,
+      runValidators: true,
+    },
+  );
 
   return result;
 };
@@ -54,7 +58,7 @@ const getContentFromDB = async (
     throw new AppError(StatusCodes.NOT_FOUND, 'Content type not supported');
   }
 
-  const query: Record<string, any> = { type: contentType };
+  const query: Record<string, any> = { type: normalizedType };
   if (!isAdmin) {
     query.isActive = true;
   }
