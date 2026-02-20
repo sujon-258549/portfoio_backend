@@ -15,6 +15,7 @@ const skillsValidationSchema = z.object({
     categories: z.array(skillCategoryValidationSchema),
     type: z.literal('skills'),
     isActive: z.boolean().default(true),
+    slNumber: z.union([z.number(), z.string()]).optional(),
   }),
 });
 
