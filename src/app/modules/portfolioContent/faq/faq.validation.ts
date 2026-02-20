@@ -14,6 +14,7 @@ const faqValidationSchema = z.object({
     isActive: z.boolean().optional().default(true),
     type: z.literal('faq'),
     faqs: z.array(faqItemValidationSchema),
+    slNumber: z.union([z.number(), z.string()]).optional(),
   }),
 });
 

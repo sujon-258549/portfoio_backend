@@ -27,6 +27,7 @@ const headerValidationSchema = z.object({
       primary: headerButtonSchema,
       secondary: headerButtonSchema,
     }),
+    slNumber: z.union([z.number(), z.string()]).optional(),
   }),
 });
 

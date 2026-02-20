@@ -33,6 +33,7 @@ const createFooterValidationSchema = z.object({
     contactItems: z.array(contactItemSchema),
     craftedBy: z.string(),
     copyrightText: z.string(),
+    slNumber: z.union([z.number(), z.string()]).optional(),
   }),
 });
 
