@@ -48,6 +48,7 @@ const footerSchema = new Schema<TFooter>(
     contactItems: [contactItemSchema],
     craftedBy: { type: String, required: true },
     copyrightText: { type: String, required: true },
+    slNumber: { type: Schema.Types.Mixed },
   },
   {
     timestamps: true,

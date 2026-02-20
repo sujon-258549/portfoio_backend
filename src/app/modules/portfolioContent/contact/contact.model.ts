@@ -19,6 +19,7 @@ const contactSchema = new Schema<TContact>(
     titleColor: { type: String, required: true },
     contactCards: [contactCardSchema],
     isActive: { type: Boolean, default: true },
+    slNumber: { type: Schema.Types.Mixed },
   },
   {
     timestamps: true,

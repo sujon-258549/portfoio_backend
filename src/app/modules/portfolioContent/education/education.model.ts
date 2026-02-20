@@ -27,6 +27,7 @@ const educationSchema = new Schema<TEducationContent>(
     description: { type: String, required: true },
     education: { type: [educationItemSchema], required: true },
     isActive: { type: Boolean, default: true },
+    slNumber: { type: Schema.Types.Mixed },
   },
   {
     timestamps: true,

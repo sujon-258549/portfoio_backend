@@ -29,6 +29,7 @@ const experienceSchema = new Schema<TExperienceContent>(
     description: { type: String, required: true },
     experiences: { type: [experienceItemSchema], required: true },
     isActive: { type: Boolean, default: true },
+    slNumber: { type: Schema.Types.Mixed },
   },
   {
     timestamps: true,

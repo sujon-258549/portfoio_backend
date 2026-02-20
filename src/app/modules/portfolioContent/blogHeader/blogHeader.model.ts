@@ -15,6 +15,7 @@ const blogHeaderSchema = new Schema<TBlogHeader>(
       default: 'blog_header',
     },
     isActive: { type: Boolean, default: true },
+    slNumber: { type: Schema.Types.Mixed },
   },
   {
     timestamps: true,

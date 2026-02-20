@@ -20,6 +20,7 @@ const faqSchema = new Schema<TFAQ>(
       default: 'faq',
     },
     faqs: [faqItemSchema],
+    slNumber: { type: Schema.Types.Mixed },
   },
   {
     timestamps: true,

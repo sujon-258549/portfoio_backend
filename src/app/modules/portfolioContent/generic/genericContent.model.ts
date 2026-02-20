@@ -4,6 +4,7 @@ const dynamicSchema = new Schema(
   {
     type: { type: String, required: true, unique: true },
     isActive: { type: Boolean, default: true },
+    slNumber: { type: Schema.Types.Mixed },
   },
   {
     timestamps: true,

@@ -10,6 +10,7 @@ const creativeSectionSchema = new Schema<TCreativeSection>(
     description: { type: String, required: true },
     isActive: { type: Boolean, default: true },
     type: { type: String, required: true, default: 'creative_section' },
+    slNumber: { type: Schema.Types.Mixed },
   },
   {
     timestamps: true,
