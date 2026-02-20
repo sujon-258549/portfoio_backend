@@ -19,6 +19,7 @@ const workflowValidationSchema = z.object({
     isActive: z.boolean().optional().default(true),
     steps: z.array(workflowStepValidationSchema),
     type: z.literal('workflow'),
+    slNumber: z.union([z.number(), z.string()]).optional(),
   }),
 });
 

@@ -21,6 +21,7 @@ const trustSectionValidationSchema = z.object({
     type: z.literal('trust_section'),
     brands: z.array(brandValidationSchema),
     stats: z.array(statValidationSchema),
+    slNumber: z.union([z.number(), z.string()]).optional(),
   }),
 });
 

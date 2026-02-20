@@ -17,6 +17,7 @@ const welcomeModalValidationSchema = z.object({
     ctaLink: z.string().min(1, 'CTA link is required'),
     isActive: z.boolean().default(true).optional(),
     quickLinks: z.array(quickLinkValidationSchema),
+    slNumber: z.union([z.number(), z.string()]).optional(),
   }),
 });
 
