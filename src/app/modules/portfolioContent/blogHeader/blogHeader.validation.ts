@@ -9,6 +9,7 @@ const blogHeaderValidationSchema = z.object({
     titleHighlight: z.string(),
     type: z.literal('blog_header'),
     isActive: z.boolean().optional().default(true),
+    slNumber: z.union([z.number(), z.string()]).optional(),
   }),
 });
 
