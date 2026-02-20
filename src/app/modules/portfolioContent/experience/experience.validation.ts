@@ -25,6 +25,7 @@ const experienceValidationSchema = z.object({
     description: z.string(),
     experiences: z.array(experienceItemValidationSchema),
     isActive: z.boolean().default(true),
+    slNumber: z.union([z.number(), z.string()]).optional(),
   }),
 });
 

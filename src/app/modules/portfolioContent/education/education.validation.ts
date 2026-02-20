@@ -23,6 +23,7 @@ const educationValidationSchema = z.object({
     description: z.string(),
     education: z.array(educationItemValidationSchema),
     isActive: z.boolean().default(true),
+    slNumber: z.union([z.number(), z.string()]).optional(),
   }),
 });
 
