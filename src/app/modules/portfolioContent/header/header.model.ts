@@ -34,6 +34,7 @@ const headerSchema = new Schema<THeader>(
       primary: { type: headerButtonSchema, required: true },
       secondary: { type: headerButtonSchema, required: true },
     },
+    slNumber: { type: Schema.Types.Mixed },
   },
   {
     timestamps: true,

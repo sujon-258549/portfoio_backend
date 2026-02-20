@@ -16,6 +16,7 @@ const projectSectionHeaderSchema = new Schema<TProjectSectionHeader>(
       default: 'project-section-header',
     },
     isActive: { type: Boolean, default: true },
+    slNumber: { type: Schema.Types.Mixed },
   },
   {
     timestamps: true,

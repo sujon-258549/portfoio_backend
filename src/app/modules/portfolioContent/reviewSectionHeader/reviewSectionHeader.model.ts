@@ -15,6 +15,7 @@ const reviewSectionHeaderSchema = new Schema<TReviewSectionHeader>(
       unique: true,
       default: 'review_section_header',
     },
+    slNumber: { type: Schema.Types.Mixed },
   },
   {
     timestamps: true,

@@ -49,6 +49,7 @@ const heroSchema = new Schema<THeroContent>(
     techStack: { type: [heroTechStackSchema], required: true },
     type: { type: String, required: true, unique: true, default: 'hero' },
     isActive: { type: Boolean, default: true },
+    slNumber: { type: Schema.Types.Mixed },
   },
   {
     timestamps: true,
