@@ -23,6 +23,7 @@ const workflowSchema = new Schema<TWorkflow>(
     isActive: { type: Boolean, default: true },
     steps: { type: [workflowStepSchema], required: true },
     type: { type: String, required: true, unique: true, default: 'workflow' },
+    slNumber: { type: Schema.Types.Mixed },
   },
   {
     timestamps: true,
