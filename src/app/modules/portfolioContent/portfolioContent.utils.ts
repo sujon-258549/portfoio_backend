@@ -19,8 +19,6 @@ import { TrustSection } from './trustSection/trustSection.model';
 
 import { CreativeSection } from './creativeSection/creativeSection.model';
 
-import { CreativeSection } from './creativeSection/creativeSection.model';
-
 export const modelMapper: Record<string, Model<any>> = {
   footer: Footer,
   contact: Contact,
@@ -38,9 +36,6 @@ export const modelMapper: Record<string, Model<any>> = {
   review_section_header: ReviewSectionHeader,
   welcome_modal: WelcomeModal,
   creative_section: CreativeSection,
-<<<<<<< HEAD
   faq: FAQ,
   trust_section: TrustSection,
-=======
->>>>>>> 687bc199e0a27fc2f6630ccdf4bb6f036267917e
 };

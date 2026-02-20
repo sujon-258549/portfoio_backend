@@ -9,6 +9,7 @@ const creativeSectionValidationSchema = z.object({
     description: z.string(),
     isActive: z.boolean().optional(),
     type: z.literal('creative_section'),
+    slNumber: z.union([z.number(), z.string()]).optional(),
   }),
 });
 
