@@ -26,6 +26,7 @@ const aboutValidationSchema = z.object({
     titleHighlight: z.string(),
     type: z.literal('about'),
     isActive: z.boolean().default(true),
+    slNumber: z.union([z.number(), z.string()]).optional(),
   }),
 });
 
