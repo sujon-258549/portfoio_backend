@@ -19,6 +19,7 @@ const skillsSchema = new Schema<TSkillsContent>(
     categories: { type: [skillCategorySchema], required: true },
     type: { type: String, required: true, unique: true, default: 'skills' },
     isActive: { type: Boolean, default: true },
+    slNumber: { type: Schema.Types.Mixed },
   },
   {
     timestamps: true,

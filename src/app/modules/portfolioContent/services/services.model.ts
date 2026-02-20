@@ -20,6 +20,7 @@ const servicesSchema = new Schema<TServices>(
     services: { type: [serviceItemSchema], required: true },
     type: { type: String, default: 'services' },
     isActive: { type: Boolean, default: true },
+    slNumber: { type: Schema.Types.Mixed },
   },
   {
     timestamps: true,
