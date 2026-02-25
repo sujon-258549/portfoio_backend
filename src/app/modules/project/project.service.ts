@@ -30,10 +30,20 @@ const getSingleProjectFromDB = async (idOrSlug: string) => {
 };
 
 const updateProjectInDB = async (id: string, payload: Partial<TProject>) => {
-  console.log('Update Payload:', payload);
-  console.log('Update ID:', id);
   const updateData = { ...payload };
   delete updateData._id;
+
+  // Auto generate slug if title is updated
+  if (updateData.title) {
+    const existingProject = await Project.findById(id);
+    if (existingProject) {
+      updateData.slug = await createUniqueSlug(
+        Project,
+        updateData.title,
+        existingProject.slug,
+      );
+    }
+  }
 
   const result = await Project.findByIdAndUpdate(
     id,
@@ -48,7 +58,6 @@ const updateProjectInDB = async (id: string, payload: Partial<TProject>) => {
     throw new AppError(StatusCodes.NOT_FOUND, 'Project not found!');
   }
 
-  console.log('Update Result Tags:', result.tags);
   return result;
 };
 

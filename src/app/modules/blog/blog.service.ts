@@ -33,7 +33,18 @@ const getSingleBlogFromDB = async (idOrSlug: string, isAdmin: boolean) => {
 
 const updateBlogInDB = async (id: string, payload: Partial<TBlog>) => {
   const updateData = { ...payload };
-  // delete updateData._id; // Mongoose handles this usually but good to be safe if user sends it
+
+  // Auto generate slug if title is updated
+  if (updateData.title) {
+    const existingBlog = await Blog.findById(id);
+    if (existingBlog) {
+      updateData.slug = await createUniqueSlug(
+        Blog,
+        updateData.title,
+        existingBlog.slug,
+      );
+    }
+  }
 
   const result = await Blog.findByIdAndUpdate(
     id,

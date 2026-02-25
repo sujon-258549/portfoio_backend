@@ -8,4 +8,6 @@ export type TBlog = {
   readTime: string;
   slug: string;
   title: string;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
 };
