@@ -21,19 +21,23 @@ const logger = createLogger({
   defaultMeta: { service: 'user-service' },
   transports: [
     new transports.Console(),
-    new DailyRotateFile({
-      filename: path.join(
-        process.cwd(),
-        'logs',
-        'winston',
-        'successes',
-        'ph-%DATE%-success.log',
-      ),
-      datePattern: 'YYYY-MM-DD-HH',
-      zippedArchive: true,
-      maxSize: '20m',
-      maxFiles: '14d',
-    }),
+    ...(process.env.NODE_ENV !== 'production'
+      ? [
+          new DailyRotateFile({
+            filename: path.join(
+              process.cwd(),
+              'logs',
+              'winston',
+              'successes',
+              'ph-%DATE%-success.log',
+            ),
+            datePattern: 'YYYY-MM-DD-HH',
+            zippedArchive: true,
+            maxSize: '20m',
+            maxFiles: '14d',
+          }),
+        ]
+      : []),
   ],
 });
 
@@ -43,19 +47,23 @@ const errorLogger = createLogger({
   defaultMeta: { service: 'user-service' },
   transports: [
     new transports.Console(),
-    new DailyRotateFile({
-      filename: path.join(
-        process.cwd(),
-        'logs',
-        'winston',
-        'errors',
-        'ph-%DATE%-error.log',
-      ),
-      datePattern: 'YYYY-MM-DD-HH',
-      zippedArchive: true,
-      maxSize: '20m',
-      maxFiles: '14d',
-    }),
+    ...(process.env.NODE_ENV !== 'production'
+      ? [
+          new DailyRotateFile({
+            filename: path.join(
+              process.cwd(),
+              'logs',
+              'winston',
+              'errors',
+              'ph-%DATE%-error.log',
+            ),
+            datePattern: 'YYYY-MM-DD-HH',
+            zippedArchive: true,
+            maxSize: '20m',
+            maxFiles: '14d',
+          }),
+        ]
+      : []),
   ],
 });
 
