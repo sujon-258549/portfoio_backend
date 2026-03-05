@@ -3,6 +3,7 @@ import cors from 'cors';
 import router from './app/routes';
 import globalErrorHandler from './app/middlewares/globalErrorhandler';
 import notFound from './app/middlewares/notFound';
+import { logger } from './app/shared/logger';
 
 const app: Application = express();
 
@@ -20,6 +21,7 @@ app.use('/api', router);
 
 // Basic Route
 app.get('/', (req: Request, res: Response) => {
+  logger.info('Portfolio Backend is running!');
   res.send('Portfolio Backend is running!');
 });
 

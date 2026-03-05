@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "C:\\sujon\\portfolio\\new_portfolio_backend\\logs\\winston\\errors\\.6d951b7dbab8efbb9e8ac6a12456ccc2fe109551-audit.json",
+    "files": [
+        {
+            "date": 1772240853232,
+            "name": "C:\\sujon\\portfolio\\new_portfolio_backend\\logs\\winston\\errors\\ph-2026-02-28-07-error.log",
+            "hash": "ab6203682a9444b4fc4749d07b4f0e3901b9281b9918f3210e651035135f290e"
+        }
+    ],
+    "hashType": "sha256"
+}
